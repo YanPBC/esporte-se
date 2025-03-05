@@ -1,10 +1,10 @@
-Laravel Installer 4.5.1
-Composer version 1.10.7 2020-06-03 10:03:56
-PHP 7.4.6 (cli) (built: May 12 2020 11:38:52) ( NTS Visual C++ 2017 x64 )
-npm 6.14.18
-node v14.21.3
-laravel 8.5.9
-BD Mysql
+Laravel Installer 4.5.1 <br>
+Composer version 1.10.7 2020-06-03 10:03:56<br>
+PHP 7.4.6 (cli) (built: May 12 2020 11:38:52) ( NTS Visual C++ 2017 x64 )<br>
+npm 6.14.18<br>
+node v14.21.3<br>
+laravel 8.5.9<br>
+BD Mysql<br>
 
 
 
