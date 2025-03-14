@@ -1,5 +1,6 @@
 @extends('layouts.basico')
 
+
 @section('banner')
     @include('layouts.parcial.banner')
 @endsection

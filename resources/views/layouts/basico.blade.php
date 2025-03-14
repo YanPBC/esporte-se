@@ -22,6 +22,7 @@
     @include('layouts.parcial.topo')
     @yield('banner')
     <main>
+        @include('layouts.parcial.menu')
         @yield('content')
     </main>
     @include('layouts.parcial.toggle')
