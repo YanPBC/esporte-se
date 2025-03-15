@@ -18,8 +18,11 @@ Route::get('/', function () {
 })->name('home');
 
 route::get('/espacos',function(){
-    return view('espacos');
+    return view('espaco.index');
 })->name('espacos');
+route::get('/espacos/create',function(){
+    return view('espaco.create');
+})->name('espacos.create');
 
 route::get('/inscricoes',function(){
     return view('inscricoes');
