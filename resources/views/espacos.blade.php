@@ -16,10 +16,10 @@
                 <a href="#"class="link-secondary link-underline link-underline-opacity-0 small  mb-0 lh-sm">
                     <span class="link-light">Espaço 01</span>
                     <div class="d-flex justify-content-between">
-                        <p class="p2 me-5 ">teste com texto maior lalala lal ala lal a</p>
-                        <p class="p2 me-5">este com  com texto maior lalala lal ala lal</p>
-                        <p class="p2 me-5">este com texto maior lalala lal ala l </p></div>
-                    
+                        <p class="me-5 ">teste com texto maior lalala lal ala lal a</p>
+                        <p class="me-5">este com  com texto maior lalala lal ala lal</p>
+                        <p class="">este com texto maior lalala lal ala l </p>
+                    </div>
                 </a>
             </div>
         </div>
