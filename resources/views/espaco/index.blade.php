@@ -5,7 +5,7 @@
     <div class="my-3 p-3 bg-body rounded shadow-sm">
         <div class="row">
             <h6 class="border-bottom pb-2 mb-0">
-                <a class="link-body-emphasis link-underline link-underline-opacity-0" href="#">
+                <a class="link-body-emphasis link-underline link-underline-opacity-0" href="{{route('espaco.create')}}">
                     <strong>Novo Espaço</strong>
                 </a>
             </h6>

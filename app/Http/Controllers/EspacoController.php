@@ -3,9 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Espaco;
 
 class EspacoController extends Controller
 {
+
+    public function __construct(Espaco $espaco){
+        $this->espaco = $espaco;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +18,7 @@ class EspacoController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('espaco.index');
     }
 
     /**
@@ -34,7 +39,7 @@ class EspacoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->all());
     }
 
     /**

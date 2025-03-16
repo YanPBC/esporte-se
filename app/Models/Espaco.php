@@ -9,5 +9,15 @@ class Espaco extends Model
 {
     use HasFactory;
 
-    
+    protected $fillable = [
+        'nome',
+        'user_id',
+        'cep',
+        'bairro',
+        'logradouro',
+        'numero',
+        'cidade',
+        'estado',
+        'tipo',
+    ];
 }
