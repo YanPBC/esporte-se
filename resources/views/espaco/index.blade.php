@@ -4,52 +4,59 @@
 <div class="container bg-body-tertiary rounded">
     <div class="my-3 p-3 bg-body rounded shadow-sm">
         <div class="row">
-            <h6 class="border-bottom pb-2 mb-0">
-                <a class="link-body-emphasis link-underline link-underline-opacity-0" href="{{route('espaco.create')}}">
+            <h4 class="border-bottom pb-4 ">
+                <a class="link-body-emphasis link-opacity-25-hover link-underline link-underline-opacity-0" href="{{route('espaco.create')}}">
                     <strong>Novo Espaço</strong>
                 </a>
-            </h6>
+            </h4>
         </div>
-        <div class="row">
-            <div class="d-flex pt-3">
-                <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"></rect><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
-                <a href="#"class="link-secondary link-underline link-underline-opacity-0 small  mb-0 lh-sm">
-                    <span class="link-light">Espaço 01</span>
-                    <div class="d-flex justify-content-between">
-                        <p class="me-5 ">teste com texto maior lalala lal ala lal a</p>
-                        <p class="me-5">este com  com texto maior lalala lal ala lal</p>
-                        <p class="">este com texto maior lalala lal ala l </p>
+        @foreach($espacos as $espaco)
+            <div class="row border-bottom align-items-center">
+                <div class="col-8">
+                    <div class="row">
+                        <div class=" h5 link-light">
+                            <a href="{{route('espaco.show', $espaco->id)}}" class="link-underline link-underline-opacity-0">
+                                <span class="link-light"> {{$espaco->nome}}</span>
+                            </a>
+                        </div>
                     </div>
-                </a>
+                        <div class="row justify-content-between small text-secondary-emphasis mb-0 lh-sm">
+                            <p class="col-4">{{$espaco->logradouro}}, {{$espaco->numero}}</p>
+                            <p class="col-4">{{$espaco->cidade}}-{{$espaco->estado}}</p>
+                            <p class="col-4">Numero de Vagas: __ / __</p>
+                        </div>
+                </div>
+                <div class="col-4">
+                    <div class="row">
+                        <div class="col">
+                            <a href="{{route('espaco.show', $espaco->id)}}" class="btn btn-primary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                                <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z"></path>
+                                <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"></path>
+                                </svg>
+                                Visualizar
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="{{route('espaco.show', $espaco->id)}}" type="button" class="btn btn-success">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen-fill" viewBox="0 0 16 16">
+                                <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001"></path>
+                                </svg>
+                                Editar
+                              </a>
+                        </div>
+                        <div class="col">
+                            <a href="{{route('espaco.show', $espaco->id)}}" type="button" class="btn btn-danger">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"></path>
+                                </svg>
+                                Excluir
+                              </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="d-flex text-body-secondary pt-3">
-                <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"></rect><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
-                <a href="#"class="link-secondary link-underline link-underline-opacity-0 small  mb-0 lh-sm">
-                    <span class="link-light">Espaço 01</span>
-                    <div class="d-flex justify-content-between">
-                        <p class="p2 me-5 ">teste com texto maior lalala lal ala lal a</p>
-                        <p class="p2 me-5">este com  com texto maior lalala lal ala lal</p>
-                        <p class="p2 me-5">este com texto maior lalala lal ala l </p></div>
-                    
-                </a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="d-flex text-body-secondary pt-3">
-                <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"></rect><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
-                <a href="#"class="link-secondary link-underline link-underline-opacity-0 small  mb-0 lh-sm">
-                    <span class="link-light">Espaço 01</span>
-                    <div class="d-flex justify-content-between">
-                        <p class="p2 me-5 ">teste com texto maior lalala lal ala lal a</p>
-                        <p class="p2 me-5">este com  com texto maior lalala lal ala lal</p>
-                        <p class="p2 me-5">este com texto maior lalala lal ala l </p></div>
-                    
-                </a>
-            </div>
-        </div>
-        
+        @endforeach
     </div>
 </div>
 @endsection

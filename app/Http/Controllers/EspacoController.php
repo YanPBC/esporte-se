@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Espaco;
+use App\Models\User;
+use App\Http\Controllers\Auth;
 
 class EspacoController extends Controller
 {
@@ -18,7 +20,9 @@ class EspacoController extends Controller
      */
     public function index()
     {
-        return view('espaco.index');
+        $espaco = Espaco::where('user_id','=', auth()->user()->id)->get();
+
+        return view('espaco.index',['espacos' => $espaco]);
     }
 
     /**
@@ -39,7 +43,16 @@ class EspacoController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        $espaco = new Espaco();
+        $user = auth()->user()->id;
+
+        $espaco->fill($request->all());
+        $espaco->user_id = $user;
+
+        $espaco->save();
+
+        return redirect()->route('');
+        
     }
 
     /**
@@ -50,7 +63,9 @@ class EspacoController extends Controller
      */
     public function show($id)
     {
-        //
+        $espaco = $this->espaco->find($id);
+
+        return $espaco;
     }
 
     /**
