@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EspacoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,18 +18,13 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-route::get('/espacos',function(){
-    return view('espaco.index');
-})->name('espacos');
-route::get('/espacos/create',function(){
-    return view('espaco.create');
-})->name('espacos.create');
-
 route::get('/inscricoes',function(){
     return view('inscricoes');
 })->name('inscricoes');
 
 Auth::routes();
+
+Route::resource('espaco', EspacoController::class);
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

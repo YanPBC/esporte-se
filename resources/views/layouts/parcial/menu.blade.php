@@ -7,7 +7,7 @@
       <div class="navbar-nav mt-3">
         <a class="nav-link" aria-current="page" href="{{route('home')}}">Home</a>
         @auth
-            <a class="nav-link" href="{{route('espacos')}}">Espaços</a>
+            <a class="nav-link" href="{{route('espaco.index')}}">Espaços</a>
             <a class="nav-link" href="{{route('inscricoes')}}">Inscrições</a>
         @endauth
         <form class="d-flex" role="search">
