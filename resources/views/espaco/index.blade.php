@@ -31,7 +31,7 @@
                         <div class="row justify-content-between small text-secondary-emphasis mb-0 lh-sm">
                             <p class="col-4">{{$espaco->logradouro}}, {{$espaco->numero}}</p>
                             <p class="col-4">{{$espaco->cidade}}-{{$espaco->estado}}</p>
-                            <p class="col-4">Numero de Vagas: __ / __</p>
+                            <p class="col-4">___ atividades</p>
                         </div>
                 </div>
                 <div class="col-4">

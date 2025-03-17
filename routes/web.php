@@ -21,6 +21,9 @@ Route::get('/', function () {
 route::get('/inscricoes',function(){
     return view('inscricoes');
 })->name('inscricoes');
+route::get('/espaco/atividade',function(){
+    return view('espaco.atividade.create');
+})->name('atividade.create');
 
 Auth::routes();
 
