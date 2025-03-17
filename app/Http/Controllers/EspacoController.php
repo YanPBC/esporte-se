@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Espaco;
 use App\Models\User;
+use App\Models\Atividade;
+use App\Models\Esporte;
 use App\Http\Controllers\Auth;
 
 class EspacoController extends Controller
@@ -103,4 +105,29 @@ class EspacoController extends Controller
     {
         //
     }
+
+    public function listarAtividades($id){
+
+        $espaco = Espaco::find($id);
+
+        $esportes = Esporte::all();
+
+        return view('espaco.atividade.create',['espaco' => $espaco, 'esportes' => $esportes]);
+    }
+
+    public function AdicionarAtividade(Request $request, $id){
+
+        $atividade = new Atividade;
+
+        $atividade->fill($request->all());
+
+        $atividade->esporte_id = $request->esporte;
+
+        $atividade->espaco_id = $id;
+
+        $atividade->save();
+
+        return redirect()->route('espaco.index');
+
+        }
 }

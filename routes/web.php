@@ -21,9 +21,9 @@ Route::get('/', function () {
 route::get('/inscricoes',function(){
     return view('inscricoes');
 })->name('inscricoes');
-route::get('/espaco/atividade',function(){
-    return view('espaco.atividade.create');
-})->name('atividade.create');
+route::get('/espaco/atividade/{id}', 'App\Http\Controllers\EspacoController@listarAtividades')->name('atividade.create');
+
+Route::post('/espaco/atividade/{id}', 'App\Http\Controllers\EspacoController@AdicionarAtividade')->name('atividade.adicionar');
 
 Auth::routes();
 
