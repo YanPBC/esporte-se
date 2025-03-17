@@ -40,7 +40,7 @@ class CreateEspacosTable extends Migration
     {
         Schema::table('espacos', function(Blueprint $table) {
             //remover a fk
-            $table->dropForeign('users_user_id_foreign'); //[table]_[coluna]_foreign
+            $table->dropForeign('espacos_user_id_foreign'); //[table]_[coluna]_foreign
             //remover a coluna unidade_id
             $table->dropColumn('user_id');
         });
