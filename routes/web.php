@@ -24,7 +24,7 @@ route::get('/inscricoes',function(){
 
 Auth::routes();
 
-Route::resource('espaco', EspacoController::class);
+Route::resource('espaco', EspacoController::class)->middleware('auth');
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
