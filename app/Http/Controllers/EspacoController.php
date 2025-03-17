@@ -76,7 +76,9 @@ class EspacoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $espaco = $this->espaco->find($id);
+
+        return view('espaco.edit',['espaco' => $espaco]);
     }
 
     /**
@@ -88,7 +90,7 @@ class EspacoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return 'Atualizacao';
     }
 
     /**
