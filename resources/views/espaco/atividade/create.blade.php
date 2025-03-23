@@ -60,5 +60,40 @@
             </form>
         </div>
     </div>
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-10 col-lg-8">
+            <h2 class="m-3">LISTA DE ATIVIDADES</h2>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col-6">Esporte</th>
+                    <th scope="col-2">Data/Hora</th>
+                    <th scope="col-2">Vagas</th>
+                    <th scope="col-2">Ação</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    @foreach($espaco->atividades as $atividade)
+                        @if($atividade->data >= \Carbon\Carbon::today())
+                        <tr>
+                            <th scope="row">{{$atividade->esporte->nome}}</th>
+                            <td>{{date('d/m/Y', strtotime($atividade->data))}} - {{date('H:i', strtotime($atividade->hora_inicial))}}</td>
+                            <td>{{$atividade->vagas}}</td>
+                            <td>
+                                <form action="{{route('atividade.delete',['id'=> $atividade->id,'espaco'=>$espaco])}}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="button" onclick="submit()" class="btn btn-outline-danger">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16"><path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"></path></svg>
+                                </button>
+                                </form>
+                            </td>
+                        </tr>
+                        @endif
+                    @endforeach
+                </tbody>
+              </table>
+        </div>
+    </div>
 </div>
 @endsection

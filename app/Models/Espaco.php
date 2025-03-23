@@ -20,4 +20,15 @@ class Espaco extends Model
         'estado',
         'tipo',
     ];
+
+    /**
+     * Get all of the comments for the Espaco
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function atividades()
+    {
+        return $this->hasMany('App\Models\Atividade');
+    }
+
 }

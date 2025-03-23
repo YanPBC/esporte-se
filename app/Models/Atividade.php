@@ -10,4 +10,13 @@ class Atividade extends Model
     use HasFactory;
 
     protected $fillable = ['espaco_id','esporte_id','data','hora_inicial','hora_final', 'vagas'];
+
+    public function espaco(){
+        return $this->belongsTo('App\Models\Espaco');
+    }
+
+    public function esporte(){
+        return $this->belongsTo('App\Models\Esporte');
+    }
+
 }

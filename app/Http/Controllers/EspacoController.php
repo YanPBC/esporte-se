@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Atividade;
 use App\Models\Esporte;
 use App\Http\Controllers\Auth;
+use Carbon\Carbon;
 
 class EspacoController extends Controller
 {
@@ -53,7 +54,7 @@ class EspacoController extends Controller
 
         $espaco->save();
 
-        return redirect()->route('');
+        return redirect()->route('espaco.index');
         
     }
 
@@ -67,7 +68,7 @@ class EspacoController extends Controller
     {
         $espaco = $this->espaco->find($id);
 
-        return view('espaco.show',['espaco' => $espaco]);
+        return view('espaco.show',['espaco' => $espaco, 'atividades' => $atividades ]);
     }
 
     /**
@@ -110,6 +111,8 @@ class EspacoController extends Controller
 
         $espaco = Espaco::find($id);
 
+        $espaco = Espaco::with('atividades.esporte')->find($id);
+
         $esportes = Esporte::all();
 
         return view('espaco.atividade.create',['espaco' => $espaco, 'esportes' => $esportes]);
@@ -129,5 +132,17 @@ class EspacoController extends Controller
 
         return redirect()->route('espaco.index');
 
-        }
+    }
+
+    public function deletarAtividade($id, Espaco $espaco){
+
+        $atividade = Atividade::find($id);
+
+        $atividade->delete();
+
+        $esportes = Esporte::all();
+
+        return view('espaco.atividade.create',['espaco' => $espaco, 'esportes' => $esportes]);
+    }
+    
 }

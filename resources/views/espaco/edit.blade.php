@@ -58,51 +58,7 @@
                   <label for="address2" class="form-label">UF</label>
                   <input type="text" name="estado" class="form-control" value="{{$espaco->estado}}">
                 </div>
-    
-              <hr class="my-4">
-              
-                <div class="col-md-6">
-                    <label for="country" class="form-label">Esporte</label>
-                    <select class="form-select" id="" name="esporte" required="">
-                        <option value="">Escolha</option>
-                        <option value="volei">Volei</option>
-                        <option value="futebol">Futebol</option>
-                        <option value="tenis">Tenis</option>
-                    </select>
-                    <div class="invalid-feedback">
-                        Please select a valid country.
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <label for="country" class="form-label">Número de Vagas</label>
-                    <input type="text" name="vagas" class="form-control" id="vagas" placeholder="" required="">
-                    <div class="invalid-feedback">
-                        Please select a valid country.
-                    </div>
-                </div>
-            
-                <div class="col-md-6">
-                    <label for="country" class="form-label">Horario inicial</label>
-                    <select class="form-select" id="" name="hora-inicio" required="">
-                    <option value="">Escolha</option>
-                    <option value="hora-inicio">Hora inicio</option>
-                    </select>
-                    <div class="invalid-feedback">
-                    Please select a valid country.
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <label for="country" class="form-label">Horario Final</label>
-                    <select class="form-select" id="" name="hora-fim" required="">
-                    <option value="">Escolha</option>
-                    <option value="hora-fim">Teste hora Fim</option>
-                    </select>
-                    <div class="invalid-feedback">
-                    Please select a valid country.
-                    </div>
-                </div>
-
+  
               <hr class="my-4">
     
               <h4 class="mb-3">Tipo de Espaço</h4>
