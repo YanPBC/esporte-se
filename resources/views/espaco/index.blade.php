@@ -8,9 +8,8 @@
                 <a class="link-body-emphasis link-opacity-25-hover link-underline link-underline-opacity-0" href="{{route('espaco.create')}}">
                     <strong>
                         <button type="button" class="btn btn-success">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
-                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"></path>
-                            </svg> Novo Espaço  
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 16 16"><path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"></path></svg>
+                            Novo Espaço  
                         </button>                     
                     </strong>
                 </a>
@@ -33,7 +32,7 @@
                         </div>
                 </div>
                 <div class="col-4">
-                    <div class="row text-center">
+                    <div class="row text-center d-none d-md-flex">
                         <div class="col-4" >
                             <a href="{{route('atividade.create', $espaco->id)}}" class="btn btn-primary text-dark d-flex">
                                 <span class="d-flex"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square-fill m-1" viewBox="0 0 16 16"><path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"></path></svg>
@@ -57,6 +56,43 @@
                             </form>
                         </div>
                     </div>
+
+                    <!-- Botão Dropdown para telas menores que md -->
+                    <div class="d-md-none">
+                        <div class="dropdown">
+                            <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Atividades</a></li>
+                                <li><a class="dropdown-item" href="#">Editar</a></li>
+                                <li><a class="dropdown-item" href="#">Excluir</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    {{-- <div class="container mt-3">
+                        <!-- Botões visíveis em telas md ou maiores -->
+                        <div class="d-none d-md-flex gap-2">
+                            <button class="btn btn-primary">Botão 1</button>
+                            <button class="btn btn-secondary">Botão 2</button>
+                            <button class="btn btn-success">Botão 3</button>
+                        </div>
+                    
+                        <!-- Botão Dropdown para telas menores que md -->
+                        <div class="d-md-none">
+                            <div class="dropdown">
+                                <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                    Menu
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Botão 1</a></li>
+                                    <li><a class="dropdown-item" href="#">Botão 2</a></li>
+                                    <li><a class="dropdown-item" href="#">Botão 3</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> --}}
                 </div>
             </div>
         @endforeach

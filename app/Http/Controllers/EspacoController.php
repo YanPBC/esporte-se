@@ -68,7 +68,7 @@ class EspacoController extends Controller
     {
         $espaco = $this->espaco->find($id);
 
-        return view('espaco.show',['espaco' => $espaco, 'atividades' => $atividades ]);
+        return view('espaco.show',['espaco' => $espaco]);
     }
 
     /**
